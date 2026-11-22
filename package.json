@@ -1,0 +1,41 @@
+{
+  "name": "faceiq-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FaceIQ Labs-style browser-based facial analysis and scoring. On-device, measurement-based, evidence-sourced.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "smoke": "tsx scripts/smoke.ts",
+    "engine-cli": "tsx scripts/engine-cli.ts",
+    "norms-validate": "tsx scripts/norms-validate.ts",
+    "fixture": "tsx scripts/fixture.ts",
+    "g4-plot": "tsx scripts/g4-plot.ts"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.2.3",
+    "@prisma/client": "^6.1.0",
+    "@vercel/postgres": "^0.10.0",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.73.0",
+    "@typescript-eslint/parser": "^8.73.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.39.5",
+    "prettier": "^3.0.0",
+    "prisma": "^6.19.3",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  }
+}

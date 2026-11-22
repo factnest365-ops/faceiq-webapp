@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: faceiq_postgres
+    restart: unless-stopped
+    env_file: [.env]
+    volumes:
+      - faceiq_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  faceiq_pgdata:

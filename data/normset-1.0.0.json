@@ -1,0 +1,249 @@
+{
+  "version": "1.0.0",
+  "frozen_at": "2026-11-21T00:00:00Z",
+  "engine_version": "1.0.0",
+  "power_exponent": 0.1,
+  "score_floor": 0.5,
+  "strength_threshold": 9.0,
+  "tier_c_max_weight": 0.05,
+  "profiles": ["female", "male", "pooled"],
+  "ancestry_sets": [],
+  "limitations": [
+    "Scored on Harmony (proportion + symmetry) only. Angularity/Dimorphism/Features are Phase 2 vision-model assessments (D6).",
+    "Skin homogeneity is excluded from v1 (Phase 2): [S] 5.1 ranks it the largest single signal (r = 0.40-0.45, Matts 2007).",
+    "D9 open: interocular_face_width uses the bizygobic span; Pallett's face width is inner-ear edges (verified PMC2814183).",
+    "All bands come from published research; none are calibrated to this product's user base.",
+    "Rarity is not calibrated until G4 steps 3-5 pass (R-34).",
+    "Authorship: measurement scores are geometric observations, not medical, dermatological or attractiveness judgements."
+  ],
+  "measurements": [
+    {
+      "key": "third_upper",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0105,
+      "region": "face_thirds",
+      "ranges": {
+        "female": { "lo": 0.30, "hi": 0.33, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "male": { "lo": 0.29, "hi": 0.33, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "pooled": { "lo": 0.30, "hi": 0.33, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Farkas 1985 (A)", "population": "North American white", "n": 153, "method": "anthropometric proportions of the face" }
+      }
+    },
+    {
+      "key": "third_middle",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0130,
+      "region": "face_thirds",
+      "ranges": {
+        "female": { "lo": 0.31, "hi": 0.36, "w_lo": 0.028, "w_hi": 0.028, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "male": { "lo": 0.31, "hi": 0.38, "w_lo": 0.028, "w_hi": 0.028, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "pooled": { "lo": 0.31, "hi": 0.36, "w_lo": 0.028, "w_hi": 0.028, "weight": 0.01, "source": "Farkas 1985 (A)", "population": "North American white", "n": 153, "method": "anthropometric proportions of the face" }
+      }
+    },
+    {
+      "key": "third_lower",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0100,
+      "region": "face_thirds",
+      "ranges": {
+        "female": { "lo": 0.31, "hi": 0.35, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "male": { "lo": 0.30, "hi": 0.38, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "anthropometric proportions of the face", "exploratory": true },
+        "pooled": { "lo": 0.31, "hi": 0.36, "w_lo": 0.022, "w_hi": 0.022, "weight": 0.01, "source": "Farkas 1985 (A)", "population": "North American white", "n": 153, "method": "anthropometric proportions of the face" }
+      }
+    },
+    {
+      "key": "face_height_width",
+      "unit": "ratio",
+      "tier": "B",
+      "sigma_measurement": 0.0276,
+      "region": "face_width",
+      "ranges": {
+        "female": { "lo": 1.33, "hi": 1.47, "w_lo": 0.055, "w_hi": 0.055, "weight": 0.03, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "facial height/width proportion", "exploratory": true },
+        "male": { "lo": 1.34, "hi": 1.52, "w_lo": 0.055, "w_hi": 0.055, "weight": 0.03, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "facial height/width proportion", "exploratory": true },
+        "pooled": { "lo": 1.33, "hi": 1.52, "w_lo": 0.055, "w_hi": 0.055, "weight": 0.03, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "facial height/width proportion", "exploratory": true }
+      }
+    },
+    {
+      "key": "eye_mouth_length",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0103,
+      "region": "eyes_and_mouth",
+      "ranges": {
+        "female": { "lo": 0.35, "hi": 0.37, "w_lo": 0.021, "w_hi": 0.021, "weight": 0.08, "source": "Pallett 2010 (A)", "population": "pooled", "n": 200, "method": "pupil midline to stomion over face length" },
+        "male": { "lo": 0.35, "hi": 0.37, "w_lo": 0.021, "w_hi": 0.021, "weight": 0.08, "source": "Pallett 2010 (A)", "population": "pooled", "n": 200, "method": "pupil midline to stomion over face length" },
+        "pooled": { "lo": 0.35, "hi": 0.37, "w_lo": 0.021, "w_hi": 0.021, "weight": 0.08, "source": "Pallett 2010 (A)", "population": "pooled", "n": 200, "method": "pupil midline to stomion over face length" }
+      }
+    },
+    {
+      "key": "interocular_face_width",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0165,
+      "region": "proportions",
+      "ranges": {
+        "female": { "lo": 0.40, "hi": 0.52, "w_lo": 0.033, "w_hi": 0.033, "weight": 0.05, "source": "Pallett 2010 (A, D9 span)", "population": "pooled", "n": 0, "method": "IPD / bizygobic width (D9 open)" },
+        "male": { "lo": 0.40, "hi": 0.52, "w_lo": 0.033, "w_hi": 0.033, "weight": 0.05, "source": "Pallett 2010 (A, D9 span)", "population": "pooled", "n": 0, "method": "IPD / bizygobic width (D9 open)" },
+        "pooled": { "lo": 0.40, "hi": 0.52, "w_lo": 0.033, "w_hi": 0.033, "weight": 0.05, "source": "Pallett 2010 (A, D9 span)", "population": "pooled", "n": 0, "method": "IPD / bizygobic width (D9 open)" }
+      }
+    },
+    {
+      "key": "intercanthal_eye_width",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.1903,
+      "region": "proportions",
+      "ranges": {
+        "female": { "lo": 0.45, "hi": 0.80, "w_lo": 0.40, "w_hi": 0.40, "weight": 0.10, "source": "Wang 2026 (A); Farkas 1985 (A)", "population": "pooled", "n": 3517, "method": "ICD / mean eye fissure width" },
+        "male": { "lo": 0.45, "hi": 0.80, "w_lo": 0.40, "w_hi": 0.40, "weight": 0.10, "source": "Wang 2026 (A); Farkas 1985 (A)", "population": "pooled", "n": 3517, "method": "ICD / mean eye fissure width" },
+        "pooled": { "lo": 0.45, "hi": 0.80, "w_lo": 0.40, "w_hi": 0.40, "weight": 0.10, "source": "Wang 2026 (A); Farkas 1985 (A)", "population": "pooled", "n": 3517, "method": "ICD / mean eye fissure width" }
+      }
+    },
+    {
+      "key": "eye_aspect",
+      "unit": "ratio",
+      "tier": "B",
+      "sigma_measurement": 0.1234,
+      "region": "eyes",
+      "ranges": {
+        "female": { "lo": 0.50, "hi": 0.70, "w_lo": 0.247, "w_hi": 0.247, "weight": 0.02, "source": "Wang 2026 (A)", "population": "pooled", "n": 3517, "method": "mean eye fissure height / mean eye fissure width" },
+        "male": { "lo": 0.50, "hi": 0.70, "w_lo": 0.247, "w_hi": 0.247, "weight": 0.02, "source": "Wang 2026 (A)", "population": "pooled", "n": 3517, "method": "mean eye fissure height / mean eye fissure width" },
+        "pooled": { "lo": 0.50, "hi": 0.70, "w_lo": 0.247, "w_hi": 0.247, "weight": 0.02, "source": "Wang 2026 (A)", "population": "pooled", "n": 3517, "method": "mean eye fissure height / mean eye fissure width" }
+      }
+    },
+    {
+      "key": "canthal_tilt",
+      "unit": "deg",
+      "tier": "A/B",
+      "sigma_measurement": 6.1269,
+      "region": "eyes",
+      "ranges": {
+        "female": { "lo": 2.0, "hi": 8.0, "w_lo": 12.27, "w_hi": 12.27, "weight": 0.12, "source": "Wang 2026 (A); Bashour & Geist 2007 (B)", "population": "pooled", "n": 3517, "method": "angle of medial to lateral canthus vs horizontal, deg (positive = lateral above medial)" },
+        "male": { "lo": 0.0, "hi": 6.0, "w_lo": 12.27, "w_hi": 12.27, "weight": 0.12, "source": "Wang 2026 (A); Bashour & Geist 2007 (B)", "population": "pooled", "n": 3517, "method": "angle of medial to lateral canthus vs horizontal, deg (positive = lateral above medial)" },
+        "pooled": { "lo": 0.0, "hi": 15.0, "w_lo": 12.27, "w_hi": 12.27, "weight": 0.12, "source": "Wang 2026 (A); Bashour & Geist 2007 (B)", "population": "pooled", "n": 3517, "method": "angle of medial to lateral canthus vs horizontal, deg (positive = lateral above medial)" }
+      }
+    },
+    {
+      "key": "lip_ratio",
+      "unit": "ratio",
+      "tier": "A/B",
+      "sigma_measurement": 0.0693,
+      "region": "lips",
+      "ranges": {
+        "female": { "lo": 0.44, "hi": 0.58, "w_lo": 0.139, "w_hi": 0.139, "weight": 0.12, "source": "Popenko 2017 (A/B)", "population": "white women", "n": 100, "method": "upper vermilion height / lower vermilion height" },
+        "male": { "lo": 0.42, "hi": 0.58, "w_lo": 0.139, "w_hi": 0.139, "weight": 0.12, "source": "Popenko 2017 (A/B)", "population": "white women", "n": 100, "method": "upper vermilion height / lower vermilion height" },
+        "pooled": { "lo": 0.44, "hi": 0.58, "w_lo": 0.139, "w_hi": 0.139, "weight": 0.12, "source": "Popenko 2017 (A/B)", "population": "white women", "n": 100, "method": "upper vermilion height / lower vermilion height" }
+      }
+    },
+    {
+      "key": "bigonial_bizygonomic",
+      "unit": "ratio",
+      "tier": "B",
+      "sigma_measurement": 0.0201,
+      "region": "jaw",
+      "ranges": {
+        "female": { "lo": 0.84, "hi": 0.93, "w_lo": 0.040, "w_hi": 0.040, "weight": 0.05, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "bigonial width / bizygobic width", "exploratory": true },
+        "male": { "lo": 0.84, "hi": 0.93, "w_lo": 0.040, "w_hi": 0.040, "weight": 0.05, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "bigonial width / bizygobic width", "exploratory": true },
+        "pooled": { "lo": 0.84, "hi": 0.93, "w_lo": 0.040, "w_hi": 0.040, "weight": 0.05, "source": "Salinas 2023 (B, exploratory)", "population": "Black celebrities", "n": 42, "method": "bigonial width / bizygobic width", "exploratory": true }
+      }
+    },
+    {
+      "key": "symmetry_index",
+      "unit": "ratio",
+      "tier": "A",
+      "sigma_measurement": 0.0041,
+      "region": "symmetry",
+      "ranges": {
+        "female": { "lo": 0.98, "hi": 1.0, "w_lo": 0.0082, "w_hi": 0.0082, "weight": 0.30, "source": "Rhodes 2006 (A)", "population": "pooled", "n": 100, "method": "1 - mean |L - mirror(R)| / bizygobic over paired landmarks" },
+        "male": { "lo": 0.98, "hi": 1.0, "w_lo": 0.0082, "w_hi": 0.0082, "weight": 0.30, "source": "Rhodes 2006 (A)", "population": "pooled", "n": 100, "method": "1 - mean |L - mirror(R)| / bizygobic over paired landmarks" },
+        "pooled": { "lo": 0.98, "hi": 1.0, "w_lo": 0.0082, "w_hi": 0.0082, "weight": 0.30, "source": "Rhodes 2006 (A)", "population": "pooled", "n": 100, "method": "1 - mean |L - mirror(R)| / bizygobic over paired landmarks" }
+      }
+    },
+    {
+      "key": "fwhr_upper",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 0.1252,
+      "region": "face_width",
+      "ranges": {
+        "female": { "lo": 1.0, "hi": 10.0, "w_lo": 2.0, "w_hi": 2.0, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "bizygobic / brow-top to philtrum; not sourced (falsified as template)" },
+        "male": { "lo": 1.0, "hi": 10.0, "w_lo": 2.0, "w_hi": 2.0, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "bizygobic / brow-top to philtrum; not sourced (falsified as template)" },
+        "pooled": { "lo": 1.0, "hi": 10.0, "w_lo": 2.0, "w_hi": 2.0, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "bizygobic / brow-top to philtrum; not sourced (falsified as template)" }
+      }
+    },
+    {
+      "key": "midface_ratio",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 0.0573,
+      "region": "eyes",
+      "ranges": {
+        "female": { "lo": 0.05, "hi": 1.0, "w_lo": 0.2, "w_hi": 0.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "IPD / pupil midline to upper lip; no primary study (C/X)" },
+        "male": { "lo": 0.05, "hi": 1.0, "w_lo": 0.2, "w_hi": 0.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "IPD / pupil midline to upper lip; no primary study (C/X)" },
+        "pooled": { "lo": 0.05, "hi": 1.0, "w_lo": 0.2, "w_hi": 0.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "IPD / pupil midline to upper lip; no primary study (C/X)" }
+      }
+    },
+    {
+      "key": "nose_width_ratio",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 1.3262,
+      "region": "face_width",
+      "ranges": {
+        "female": { "lo": 0.5, "hi": 12.0, "w_lo": 2.6, "w_hi": 2.6, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "alar width / intercanthal; population-dependent, no ideal (Farkas 1985)" },
+        "male": { "lo": 0.5, "hi": 12.0, "w_lo": 2.6, "w_hi": 2.6, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "alar width / intercanthal; population-dependent, no ideal (Farkas 1985)" },
+        "pooled": { "lo": 0.5, "hi": 12.0, "w_lo": 2.6, "w_hi": 2.6, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "alar width / intercanthal; population-dependent, no ideal (Farkas 1985)" }
+      }
+    },
+    {
+      "key": "nasal_index",
+      "unit": "ratio",
+      "tier": "B",
+      "sigma_measurement": 0.1138,
+      "region": "face_width",
+      "ranges": {
+        "female": { "lo": 0.2, "hi": 3.0, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "universal", "n": 1470, "method": "alar width / nasion-subnasale; population norm (Farkas 2005), no attractiveness optimum" },
+        "male": { "lo": 0.2, "hi": 3.0, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "universal", "n": 1470, "method": "alar width / nasion-subnasale; population norm (Farkas 2005), no attractiveness optimum" },
+        "pooled": { "lo": 0.2, "hi": 3.0, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "universal", "n": 1470, "method": "alar width / nasion-subnasale; population norm (Farkas 2005), no attractiveness optimum" }
+      }
+    },
+    {
+      "key": "mouth_nose_ratio",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 0.0977,
+      "region": "lips",
+      "ranges": {
+        "female": { "lo": 0.2, "hi": 1.5, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "mouth width / alar width; not validated as an independent criterion (Appendix B)" },
+        "male": { "lo": 0.2, "hi": 1.5, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "mouth width / alar width; not validated as an independent criterion (Appendix B)" },
+        "pooled": { "lo": 0.2, "hi": 1.5, "w_lo": 0.4, "w_hi": 0.4, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "mouth width / alar width; not validated as an independent criterion (Appendix B)" }
+      }
+    },
+    {
+      "key": "chin_philtrum",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 7.1061,
+      "region": "jaw",
+      "ranges": {
+        "female": { "lo": 0.5, "hi": 40.0, "w_lo": 14.2, "w_hi": 14.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "stomion-menton / subnasale-stomion; no validated ratio (Appendix B)" },
+        "male": { "lo": 0.5, "hi": 40.0, "w_lo": 14.2, "w_hi": 14.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "stomion-menton / subnasale-stomion; no validated ratio (Appendix B)" },
+        "pooled": { "lo": 0.5, "hi": 40.0, "w_lo": 14.2, "w_hi": 14.2, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "stomion-menton / subnasale-stomion; no validated ratio (Appendix B)" }
+      }
+    },
+    {
+      "key": "bitemporal_ratio",
+      "unit": "ratio",
+      "tier": "C",
+      "sigma_measurement": 0.0171,
+      "region": "face_width",
+      "ranges": {
+        "female": { "lo": 0.02, "hi": 0.5, "w_lo": 0.034, "w_hi": 0.034, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "ear-to-ear width / bizygobic; temple width unmeasured in mesh (Appendix B)" },
+        "male": { "lo": 0.02, "hi": 0.5, "w_lo": 0.034, "w_hi": 0.034, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "ear-to-ear width / bizygobic; temple width unmeasured in mesh (Appendix B)" },
+        "pooled": { "lo": 0.02, "hi": 0.5, "w_lo": 0.034, "w_hi": 0.034, "weight": 0.0, "source": "heuristic", "population": "none", "n": 0, "method": "ear-to-ear width / bizygobic; temple width unmeasured in mesh (Appendix B)" }
+      }
+    }
+  ]
+}

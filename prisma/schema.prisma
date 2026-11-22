@@ -1,0 +1,143 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Postgres RLS: every table carries app_user_id; lib/db.ts sets
+// current_setting('app.user_id') per request and policies filter rows.
+model AppUser {
+  id              String    @id @default(uuid())
+  email           String    @unique
+  createdAt       DateTime  @default(now())
+  ageAttestedAt   DateTime?
+  termsAcceptedAt DateTime?
+  consentRecord   Json?
+  analyticsOptIn  Boolean   @default(false)
+  profile         Profile?
+  scans           Scan[]
+  sessionToken    String?   @unique
+  sessionExpires  DateTime?
+
+  @@map("app_users")
+}
+
+model Profile {
+  userId      String   @id @map("user_id")
+  sexAtBirth  String   // "male" | "female" | "prefer_not_to_say"
+  ancestry    String   @default("pooled") // v1: pooled norms only (R-21)
+  updatedAt   DateTime @updatedAt
+  user        AppUser  @relation(fields: [userId], references: [id])
+
+  @@map("profiles")
+}
+
+model Scan {
+  id                     String    @id @default(uuid())
+  appUserId              String    @map("app_user_id")
+  createdAt              DateTime  @default(now())
+  captureMode            String    // "live" | "upload"
+  status                 String    // "draft" | "confirmed"
+  engineVersion          String
+  normVersion            String
+  normHash               String
+  landmarkMappingVersion String
+  profileSnapshot        Json
+  photos                 Photo[]
+  landmarkSets           LandmarkSet[]
+  measurements           Measurement[]
+  analyses               Analysis[]
+  appUser                AppUser  @relation(fields: [appUserId], references: [id])
+
+  @@index([appUserId, createdAt])
+  @@map("scans")
+}
+
+model Photo {
+  id         String   @id @default(uuid())
+  appUserId  String   @map("app_user_id")
+  scanId     String
+  storageKey String?  // null when not retained (spec 7.3)
+  sha256     String
+  width      Int
+  height     Int
+  retained   Boolean
+  scan       Scan     @relation(fields: [scanId], references: [id])
+
+  @@map("photos")
+}
+
+model LandmarkSet {
+  id           String       @id @default(uuid())
+  appUserId    String       @map("app_user_id")
+  scanId       String
+  version      Int          @default(1)
+  source       String       // "auto" | "edited" | "manual_review"
+  points       Json         // array of { name, x, y, z, confidence }
+  framesFused  Int?
+  createdAt    DateTime     @default(now())
+  imageWidth   Int?
+  imageHeight  Int?
+  measurements Measurement[]
+  analyses     Analysis[]
+  scan         Scan         @relation(fields: [scanId], references: [id])
+
+  @@map("landmark_sets")
+}
+
+model Measurement {
+  id            String      @id @default(uuid())
+  appUserId     String      @map("app_user_id")
+  scanId        String
+  landmarkSetId String
+  analysisId    String?
+  key           String
+  value         Float?      // null when degenerate (R-33)
+  unit          String      // "ratio" | "deg" | "mm"
+  region        String
+  tier          String
+  status        String      // "ok" | "not_measured" | "low_confidence"
+  score         Float?      // null when not measured
+  confidence    Float
+  idealLo       Float?
+  idealHi       Float?
+  wLo           Float?
+  wHi           Float?
+  sigmaMeasurement Float?
+  weight        Float
+  source        String
+  createdAt     DateTime    @default(now())
+  scan          Scan          @relation(fields: [scanId], references: [id])
+  landmarkSet   LandmarkSet   @relation(fields: [landmarkSetId], references: [id])
+  analysis      Analysis?     @relation(fields: [analysisId], references: [id])
+
+  @@index([appUserId, scanId, key])
+  @@map("measurements")
+}
+
+model Analysis {
+  id             String        @id @default(uuid())
+  appUserId      String        @map("app_user_id")
+  scanId         String
+  landmarkSetId  String
+  engineVersion  String
+  normVersion    String
+  harmony        Float
+  overall        Float
+  band           String
+  confidence     Float
+  limitations    Json          // string[]
+  createdAt      DateTime      @default(now())
+  measurements   Measurement[]
+  scan           Scan          @relation(fields: [scanId], references: [id])
+  landmarkSet    LandmarkSet   @relation(fields: [landmarkSetId], references: [id])
+  idempotencyHash String
+
+  @@index([appUserId, scanId, createdAt])
+  @@index([appUserId, idempotencyHash])
+  @@unique([scanId, idempotencyHash])
+  @@map("analyses")
+}

@@ -1,0 +1,38 @@
+{
+  "version": "1",
+  "source": "https://www.sanderdesnaijer.com/blog/mediapipe-face-mesh-landmarks (updated 15 Nov 2026) + [A] 3.3",
+  "points": {
+    "trichion": null,
+    "glabella": 9,
+    "subnasale": 2,
+    "menton": 152,
+    "zygion_L": 234,
+    "zygion_R": 454,
+    "gonion_L": 148,
+    "gonion_R": 377,
+    "nasion": 6,
+    "alar_base_L": 217,
+    "alar_base_R": 420,
+    "philtrum": 13,
+    "stomion": 0,
+    "mouth_corner_L": 61,
+    "mouth_corner_R": 291,
+    "iris_center_L": 468,
+    "iris_center_R": 473,
+    "inner_canthus_L": 133,
+    "inner_canthus_R": 362,
+    "outer_canthus_L": 33,
+    "outer_canthus_R": 263,
+    "eye_top_L": 159,
+    "eye_top_R": 386,
+    "eye_bottom_L": 145,
+    "eye_bottom_R": 374,
+    "brow_top_L": 52,
+    "brow_top_R": 282,
+    "ear_L": null,
+    "ear_R": null
+  },
+  "notes": [
+    "Landmarks not in the 468 mesh points per [A] 3.3 (nasion, gonion, trichion, tragus, orbitale) are approximated from nearest vertices: trichion and ear_L/ear_R are user-placed or estimated (spec R-18); gonion/nasion use the nearest jaw/nose-bridge vertices listed on the cheat sheet."
+  ]
+}
